@@ -1,0 +1,58 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.top-header {
+  background-color: #ECD5C3;
+  padding: 5px;
+  text-align: right;
+}
+
+.App-header {
+  background-color: #D9A357;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.quote {
+  background-size: cover; 
+  font-family: 'Inconsolata', monospace; 
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  position: absolute;
+  top: 28px;
+  bottom: 0;
+  width: 100%;
+}
+
+.inspiration-quote {    
+  background-color: rgba(255,255,255, 0.5);
+  width: 50%;
+  margin: 0 auto;
+}
+
+button {
+  width: 100px;
+  margin: 0 auto;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
