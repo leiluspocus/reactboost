@@ -8,7 +8,7 @@
 }
 
 .top-header {
-  background-color: #ECD5C3;
+  background-color: #6CE3DE;
   padding: 5px;
   text-align: right;
 }
@@ -30,26 +30,21 @@
 .quote {
   background-size: cover; 
   font-family: 'Inconsolata', monospace; 
-  text-align: center;
-  vertical-align: middle;
+  text-align: center; 
+
   display: flex;
-  flex-direction: column;
-  align-content: stretch;
-  position: absolute;
-  top: 28px;
-  bottom: 0;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .inspiration-quote {    
   background-color: rgba(255,255,255, 0.5);
   width: 50%;
   margin: 0 auto;
-}
-
-button {
-  width: 100px;
-  margin: 0 auto;
+  padding: 50px;
 }
 
 @keyframes App-logo-spin {

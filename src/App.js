@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'; 
 import Quote from './Quote';
 import './App.css';
-import TopHeader from './TopHeader';
+import TopHeader from './TopHeader'; 
 
 
 

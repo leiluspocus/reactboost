@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg'; 
-import RefreshButton from './RefreshButton';
+import logo from './logo.svg';
+import './Button.css';
 
 class Quote extends Component {
     constructor(props){
@@ -29,27 +29,35 @@ class Quote extends Component {
         quote: "N'attends pas d'avoir beaucoup pour donner un peu.", 
         image: "https://images.unsplash.com/photo-1465711403138-162e171bb7e4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4f7624e85824898b19bf5b794e98274a&auto=format&fit=crop&w=1350&q=80"
       }
+
+      // On bind l'objet this pour y avoir accès quand on rafraîchit les quote avec le bouton ! 
+      // Voir article complet sur l'explication du souci ici: 
+      // https://www.bignerdranch.com/blog/choosing-the-best-approach-for-react-event-handlers/ 
+      // On évite de binder comme ci-dessous et on déclare la fonction changeQuote en utilisant 
+      // des class property arrow functions ! 
+      // this.changeQuote = this.changeQuote.bind(this);
     }
 
-    componentDidMount() {
-        let refreshQuote = setInterval(function() {
-            let inspiration = this.inspirations[Math.floor(Math.random() * 3)];
-            this.setState({quote: inspiration.quote, image: inspiration.image });
-        }.bind(this), 10000);
+    changeQuote = () => { 
+        console.log("Changing quote !");
+        let inspiration = this.inspirations[Math.floor(Math.random() * 3)];
+        this.setState({quote: inspiration.quote, image: inspiration.image });
+      }
 
+    componentDidMount() { 
+        console.log("component did mount");
         // setTimeout(function(){ clearInterval(refreshQuote); }, 5000);
         //DON'T DO THIS, JUST DEMONSTRATING .forceUpdate() 
         // setTimeout(function(){ this.state.now = 'foo'; this.forceUpdate() }.bind(this), 10000);
     }
   
-    render() {
-        // Plus tard, ajouter un <RefreshButton />
+    render() { 
       return (
-          <div class="quote" style={{ backgroundImage: `url(${this.state.image})` }}>
-                <div class="inspiration-quote">
+          <div className="quote" style={{ backgroundImage: `url(${this.state.image})` }}>
+                <div className="inspiration-quote">
                     <img src={logo} className="App-logo" alt="logo" /> 
-                    <h1 id="lequote">{this.state.quote}</h1>
-                    
+                    <h1 id="lequote">{this.state.quote}</h1>      
+                    <button onClick={this.changeQuote} >More inspiration</button>
                 </div>
           </div>
       );

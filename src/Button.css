@@ -1,0 +1,8 @@
+button {
+    -webkit-appearance: none;
+    background-color: #eee;
+    border: 1px solid #eee;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+}
